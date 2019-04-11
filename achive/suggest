@@ -1,0 +1,68 @@
+# create corporations mapping
+curl -X PUT "172.17.31.225:9200/corporations" -H 'Content-Type: application/json' -d'
+{
+  "mappings": {
+    "corporation": {
+      "properties": {
+        "name_suggest": {
+          "type": "completion"
+        },
+        "name": {
+          "type": "text"
+        },
+        "country": {
+          "type": "keyword"
+        }
+      }
+    }
+  }
+}'
+
+# add data to corporation
+curl -X PUT "172.17.31.225:9200/corporations/corporation/Senmei?refresh" -H 'Content-Type: application/json' -d'
+{
+     "name_suggest" : {
+         "input": "Senmei",
+         "weight" : 28
+     },
+     "name": "Senmei",
+     "country": "ng",
+     "weight": 28
+ }
+'
+
+#create schools mapping
+curl -X PUT "172.17.31.225:9200/schools" -H 'Content-Type: application/json' -d'
+{
+  "mappings": {
+    "school": {
+      "properties": {
+        "name_suggest": {
+          "type": "completion"
+        },
+        "name": {
+          "type": "text"
+        },
+        "country": {
+          "type": "keyword"
+        }
+      }
+    }
+  }
+}'
+
+# add data to schools
+curl -X PUT "172.17.31.225:9200/schools/school/1?refresh" -H 'Content-Type: application/json' -d'
+{
+    "name_suggest" : {
+        "input": "Senmei",
+        "weight" : 28
+    },
+    "name": "Senmei",
+    "country": "ng",
+    "weight": 28
+}
+'
+
+curl -H "Content-Type: application/json" -XPOST "172.17.31.225:9200/schools/school/_bulk?pretty&refresh" --data-binary "@es_schools.json"
+curl -H "Content-Type: application/json" -XPOST "172.17.31.225:9200/corporations/corporation/_bulk?pretty&refresh" --data-binary "@es_corporation.json"
