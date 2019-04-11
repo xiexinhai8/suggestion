@@ -1,6 +1,3 @@
-suggestion
-==========
-
 > 简单的输入框下拉提示服务
 
 ### 简介
@@ -140,4 +137,3 @@ Blog: http://www.wklken.me
 
 Github: https://github.com/wklken
 
-2013-10-13 于深圳
