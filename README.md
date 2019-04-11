@@ -4,10 +4,6 @@
 
 在搜索输入框等位置,用户输入关键词,系统提示可以使用的关键字,提升用户体验
 
-### 截图
-
-![img](https://raw.githubusercontent.com/wklken/gallery/master/suggestion/suggestion.gif)
-
 ### 依赖
 
 1. jquery-2.1.1.min.js
@@ -33,14 +29,7 @@
     format:    word\tweight
     coding:    utf-8 [must]
     require:   weight type(int)
-
     eg:  植物大战僵尸\t1000
-
-
-
-
-
-
 ### 实现方式1: easymap
 
 使用map方式实现树结构,有python和golang两个版本(见easymap子目录)
@@ -123,17 +112,5 @@ Result Len: 10
 
 #### Donation
 
-如果你觉得我的项目对你有所帮助, You can buy me a coffee:)
-
-![donation](https://raw.githubusercontent.com/wklken/gallery/master/donation/donation.png)
 
 ---------------
-
-wklken(Pythonista/Vimer)
-
-Email: wklken@yeah.net
-
-Blog: http://www.wklken.me
-
-Github: https://github.com/wklken
-
